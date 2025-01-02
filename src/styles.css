@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* En tu archivo styles.css */
+@layer utilities {
+    .title {
+      font-size: 18px; 
+      text-align: center; 
+      font-family: 'Cormorant', serif;
+      padding: 20px 0 20px 0;
+    }
+    .subtitle{
+        font-size: 16px; 
+        text-align: center; 
+        font-family: 'Cormorant', serif;
+        padding: 20px 0 20px 0;
+    }
+  }
+  @media (min-width: 768px) { /* Desde el tamaño 'md' en Tailwind */
+    .title {
+      font-size: 24px; /* Tamaño más grande para tabletas */
+    }
+    .subtitle{
+        font-size: 20px;
+    }
+  }
+  @media (min-width: 1024px) { /* Desde el tamaño 'md' en Tailwind */
+    .title {
+      font-size: 28px; /* Tamaño más grande para tabletas */
+    }
+    .subtitle{
+        font-size: 24px;
+    }
+  }
+
+  body{
+    color:rgb(19, 18, 18);
+    background-color: #FEFDF9;
+  }
+  

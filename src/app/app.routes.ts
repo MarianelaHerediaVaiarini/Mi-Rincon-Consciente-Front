@@ -6,4 +6,16 @@ export const routes: Routes = [
     path: '',
     component: HomeComponent,
   },
+  {
+    path: 'therapies',
+    component: HomeComponent,
+  },
+  {
+    path: 'blog',
+    component: HomeComponent,
+  },
+  {
+    path: 'resources',
+    component: HomeComponent,
+  },
 ];

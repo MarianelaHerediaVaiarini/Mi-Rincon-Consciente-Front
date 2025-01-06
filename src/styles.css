@@ -30,6 +30,11 @@
         font-family: 'Cormorant', serif;
         padding: 10px 0 10px 0;
     }
+    .text-content{
+        font-size: 12px; 
+        text-align: justify; 
+        font-family: 'montserrat', sans-serif;
+    }
   }
   @media (min-width: 768px) { /* Desde el tamaño 'md' en Tailwind */
     .title {
@@ -38,6 +43,9 @@
     .subtitle{
         font-size: 20px;
     }
+    .text-content{
+        font-size: 14px; 
+    }
   }
   @media (min-width: 1024px) { /* Desde el tamaño 'md' en Tailwind */
     .title {
@@ -45,6 +53,9 @@
     }
     .subtitle{
         font-size: 24px;
+    }
+    .text-content{
+        font-size: 16px; 
     }
   }
 

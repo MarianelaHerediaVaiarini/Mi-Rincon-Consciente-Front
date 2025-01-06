@@ -17,7 +17,7 @@ export const subMenuListUtil: SubMenuListInterface[] = [
   },
   {
     title: 'RECURSOS',
-    link: '/recourses',
+    link: '/resources',
     iconName: 'mandala',
     bgColor: 'brown-dark',
     iconColor: 'white',

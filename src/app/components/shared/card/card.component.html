@@ -1,0 +1,18 @@
+<a [routerLink]="link" class="cursor-pointer">
+<div class="bg-white shadow-md rounded-md p-4 w-[240px] h-[350px] flex flex-col justify-between">
+  <img
+    [src]="imgSrc"
+    class="rounded-lg h-48 w-full object-cover"
+    [alt]="'card-' + title"
+  />
+  <div>
+      <h4 class="subtitle !text-start">{{ title }}</h4>
+      <p class="text-content">{{ description }}</p>
+  </div>
+  <div class="flex justify-end">
+    <div class="p-1 rounded-full bg-brown-light">
+      <app-icon [iconName]="iconName" size="20px" color="white"></app-icon>
+    </div>
+  </div>
+</div>
+</a>

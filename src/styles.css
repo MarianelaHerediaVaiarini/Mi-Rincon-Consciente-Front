@@ -3,18 +3,32 @@
 @tailwind components;
 @tailwind utilities;
 /* En tu archivo styles.css */
+/* En tu styles.css */
+:root {
+  --white: #FFFFFF;
+  --calm-white: #FEFDF9;
+  --cream: #FBF3EA;
+  --beige-light: #F4EDDE;
+  --beige: #D2B29C;
+  --brown-light: #B58166;
+  --brown-dark: #6D3A21;
+  --gray-light: #E5E5E5;
+  --gray: #B3B3B3;
+  --gray-dark: #4F4F4F;
+}
+
 @layer utilities {
     .title {
       font-size: 18px; 
       text-align: center; 
       font-family: 'Cormorant', serif;
-      padding: 20px 0 20px 0;
+      padding: 10px 0 10px 0;
     }
     .subtitle{
         font-size: 16px; 
         text-align: center; 
         font-family: 'Cormorant', serif;
-        padding: 20px 0 20px 0;
+        padding: 10px 0 10px 0;
     }
   }
   @media (min-width: 768px) { /* Desde el tamaño 'md' en Tailwind */

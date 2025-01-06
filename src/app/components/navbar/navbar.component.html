@@ -1,0 +1,124 @@
+<nav class="bg-white shadow font-montserrat">
+  <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
+    <div class="flex h-16 justify-between">
+      <div class="flex px-2 lg:px-0">
+        <div class="flex shrink-0 items-center">
+          <img
+            class="h-8 w-auto"
+            src="assets/images/logo/simpleColorLogo.png"
+            alt="logo-miRinconConsciente"
+          />
+        </div>
+        <div class="hidden lg:ml-6 lg:flex lg:space-x-8">
+          <a
+            routerLink="/"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="border-brown-light"
+            class="inline-flex border-transparent items-center border-b-2 px-1 pt-1 text-sm font-medium text-gray-900"
+            >Inicio</a
+          >
+          <a
+            routerLink="/therapies"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="border-brown-light"
+            class="inline-flex border-transparent items-center border-b-2 px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            >Terapias</a
+          >
+          <a
+            routerLink="/blog"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="border-brown-light"
+            class="inline-flex border-transparent items-center border-b-2 px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            >Blog</a
+          >
+          <a
+            routerLink="/resources"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="border-brown-light"
+            class="inline-flex border-transparent items-center border-b-2 px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            >Recursos</a
+          >
+        </div>
+      </div>
+      <div
+        class="flex flex-1 items-center justify-center px-2 lg:ml-6 lg:justify-end"
+      >
+        @if(showSearch){
+        <div class="grid w-full max-w-lg grid-cols-1 lg:max-w-xs">
+          <input
+            type="search"
+            name="search"
+            class="col-start-1 row-start-1 block w-full rounded-md bg-white py-1.5 pl-10 pr-3 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-brown-light sm:text-sm/6"
+            placeholder="Buscar..."
+            (input)="onSearch($event)"
+          />
+          <app-icon
+            iconName="magnifyingGlass"
+            size="20px"
+            color="gray-dark"
+            class="pointer-events-none col-start-1 row-start-1 ml-3 size-5 self-center text-gray-400"
+          ></app-icon>
+        </div>
+        }
+      </div>
+      <div class="flex items-center lg:hidden">
+        <button
+          (click)="toggleMenu()"
+          class="relative inline-flex items-center justify-center rounded-md p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brown-light"
+        >
+          <span class="absolute -inset-0.5"></span>
+          <span class="sr-only">Open main menu</span>
+          @if(!menuOpen){
+          <app-icon
+            iconName="menu"
+            size="30px"
+            color="gray-dark"
+            class="block"
+          ></app-icon>
+          } @else {
+          <app-icon
+            iconName="close"
+            size="30px"
+            color="gray-dark"
+            class="block"
+          ></app-icon>
+          }
+        </button>
+      </div>
+    </div>
+  </div>
+  @if(menuOpen){
+  <div class="lg:hidden">
+    <div class="space-y-1 pb-3 pt-2">
+      <a
+        routerLink="/"
+        [routerLinkActiveOptions]="{ exact: true }"
+        routerLinkActive="border-brown-light bg-cream text-brown-light"
+        class="block border-transparent border-l-4 py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800"
+        >Inicio</a
+      >
+      <a
+        routerLink="/therapies"
+        [routerLinkActiveOptions]="{ exact: true }"
+        routerLinkActive="border-brown-light bg-cream text-brown-light"
+        class="block border-transparent border-l-4 py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800"
+        >Terapias</a
+      >
+      <a
+        routerLink="/blog"
+        routerLinkActive="border-brown-light bg-cream text-brown-light"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="block border-transparent border-l-4 py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800"
+        >Blog</a
+      >
+      <a
+        routerLink="/resources"
+        [routerLinkActiveOptions]="{ exact: true }"
+        routerLinkActive="border-brown-light bg-cream text-brown-light"
+        class="block border-transparent border-l-4 py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800"
+        >Recursos</a
+      >
+    </div>
+  </div>
+  }
+</nav>

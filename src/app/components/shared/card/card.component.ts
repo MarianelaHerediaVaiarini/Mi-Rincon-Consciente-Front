@@ -17,6 +17,5 @@ export class CardComponent {
 @Input() description: string = '';
 
 ngOnInit() {
-  console.log('CardComponent initialized');
 }
 }

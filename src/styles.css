@@ -63,4 +63,7 @@
     color:rgb(19, 18, 18);
     background-color: #FEFDF9;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   

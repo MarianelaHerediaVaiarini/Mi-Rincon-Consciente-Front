@@ -44,23 +44,43 @@
         class="flex flex-1 items-center justify-center px-2 lg:ml-6 lg:justify-end"
       >
         @if(showSearch){
-        <div class="grid w-full max-w-lg grid-cols-1 lg:max-w-xs">
-          <input
-            type="search"
-            name="search"
-            class="col-start-1 row-start-1 block w-full rounded-md bg-white py-1.5 pl-10 pr-3 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-brown-light sm:text-sm/6"
-            placeholder="Buscar..."
-            (input)="onSearch($event)"
-          />
-          <app-icon
-            iconName="magnifyingGlass"
-            size="20px"
-            color="gray-dark"
-            class="pointer-events-none col-start-1 row-start-1 ml-3 size-5 self-center text-gray-400"
-          ></app-icon>
-        </div>
+            <div class="grid w-full max-w-lg grid-cols-1 lg:max-w-xs relative">
+                <input
+                  type="search"
+                  name="search"
+                  class="col-start-1 row-start-1 block w-full rounded-md bg-white py-1.5 pl-10 pr-3 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-brown-light sm:text-sm/6"
+                  placeholder="Buscar..."
+                  (input)="onSearch($event)"
+                  autocomplete="off"
+                />
+                <app-icon
+                  iconName="magnifyingGlass"
+                  size="20px"
+                  color="gray-dark"
+                  class="pointer-events-none col-start-1 row-start-1 ml-3 size-5 self-center text-gray-400"
+                ></app-icon>
+                @if(results.length > 0) {
+                  <ul class="absolute top-full z-30 w-full bg-white shadow-md rounded-md border border-brown-light">
+                    @for(result of results; track $index) {
+                      <li
+                        class="px-4 py-2 text-sm text-brown-dark hover:bg-brown-light/20 cursor-pointer transition-colors"
+                      >
+                        <button (click)="onResultClick(result)" class="w-full text-left">
+                          {{ result }}
+                        </button>
+                      </li>
+                    }
+                  </ul>
+                } @else if(results.length === 0 && searchQuery) {
+                  <p class="absolute top-full z-30 w-full bg-white shadow-md rounded-md border border-brown-light px-4 py-2 text-sm text-brown-dark italic">
+                    No se encontraron resultados.
+                  </p>
+                }
+              </div>
+              
+              
         }
-      </div>
+    </div>
       <div class="flex items-center lg:hidden">
         <button
           (click)="toggleMenu()"

@@ -1,0 +1,9 @@
+<app-title-page title="BLOG"></app-title-page>
+<app-card-cover
+  title="Explora temas que elevan tu CONSCIENCIA y conectan con tu SER"
+></app-card-cover>
+<app-filter
+  [filters]="filters"
+  [selectedFilters]="selectedFilters"
+  (filterChange)="filterChange($event)"
+></app-filter>

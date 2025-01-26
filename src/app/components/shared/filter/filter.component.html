@@ -1,7 +1,7 @@
 <div class="flex flex-wrap gap-3 m-4">
   @for(filter of filters; track $index){
   <div
-  class="cursor-pointer bg-slate-200 flex items-center gap-2 rounded-full px-3 py-1 text-sm font-medium transition duration-300 hover:bg-brown-light hover:text-white"
+  class="cursor-pointer bg-slate-100 flex items-center gap-2 rounded-full px-3 py-1 text-sm font-medium transition duration-300 hover:bg-brown-light hover:text-white"
     [class.!bg-brown-light]="selectedFilters.includes(filter.id)"
     [class.text-white]="selectedFilters.includes(filter.id)"
     [class.text-gray-700]="!selectedFilters.includes(filter.id)"

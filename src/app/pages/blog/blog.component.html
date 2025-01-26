@@ -1,0 +1,21 @@
+<app-title-page title="BLOG"></app-title-page>
+<app-card-cover
+  title="Explora temas que elevan tu CONSCIENCIA y conectan con tu SER"
+></app-card-cover>
+<div class="w-full flex justify-center">
+  <app-filter
+    [filters]="filters"
+    [selectedFilters]="selectedFilters"
+    (filterChange)="filterChange($event)"
+  ></app-filter>
+</div>
+<div class="flex flex-wrap gap-6 m-8 justify-center pb-8">
+  @for(card of cards; track $index){
+  <app-card
+    [imgSrc]="card.imgSrc"
+    [title]="card.title"
+    [description]="card.description"
+    [iconName]="card.iconName"
+  ></app-card>
+  }
+</div>

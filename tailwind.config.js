@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'primary': "url('assets/images/backgrounds/background-primary.jpeg')",
+      },
       fontFamily: {
         'cormorant': ['Cormorant', 'serif'],
         'montserrat': ['Montserrat', 'sans-serif'],

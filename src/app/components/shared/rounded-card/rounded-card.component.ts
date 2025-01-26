@@ -14,4 +14,5 @@ export class RoundedCardComponent {
   @Input() iconName: string = '';
   @Input() iconColor: string = '';
   @Input() bgColor: string = '';
+  @Input() small: boolean = false;
 }

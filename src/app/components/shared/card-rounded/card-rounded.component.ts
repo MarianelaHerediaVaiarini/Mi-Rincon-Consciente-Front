@@ -3,12 +3,12 @@ import { IconComponent } from '../icon/icon.component';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-rounded-card',
+  selector: 'app-card-rounded',
   standalone: true,
   imports: [IconComponent, RouterLink],
-  templateUrl: './rounded-card.component.html',
+  templateUrl: './card-rounded.component.html',
 })
-export class RoundedCardComponent {
+export class CardRoundedComponent {
   @Input() title: string = '';
   @Input() link: string = '';
   @Input() iconName: string = '';

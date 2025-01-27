@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RoundedCardComponent } from '../../components/shared/rounded-card/rounded-card.component';
+import { CardRoundedComponent } from '../../components/shared/card-rounded/card-rounded.component';
 import { SubMenuListInterface } from '../../interfaces/home.interfaces';
 import { subMenuListUtil } from '../../utils/home.utils';
 import { CarouselCardsComponent } from '../../components/carousel-cards/carousel-cards.component';
@@ -7,7 +7,7 @@ import { CarouselCardsComponent } from '../../components/carousel-cards/carousel
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RoundedCardComponent, CarouselCardsComponent],
+  imports: [CardRoundedComponent, CarouselCardsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

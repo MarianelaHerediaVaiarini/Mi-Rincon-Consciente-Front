@@ -28,14 +28,14 @@
 <div class="flex justify-center w-full">
   <div class="flex justify-evenly w-full gap-4 flex-grow max-w-[600px]">
   @for(card of subMenuList; track $index){
-  <app-rounded-card
+  <app-card-rounded
     [bgColor]="card.bgColor"
     [iconName]="card.iconName"
     [iconColor]="card.iconColor"
     [title]="card.title"
     [link]="card.link"
     [id]="$index"
-  ></app-rounded-card>
+  />
   }
 </div>
 </div>

@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RoundedCardComponent } from './rounded-card.component';
+import { CardRoundedComponent } from './card-rounded.component';
 
 describe('RoundedCardComponent', () => {
-  let component: RoundedCardComponent;
-  let fixture: ComponentFixture<RoundedCardComponent>;
+  let component: CardRoundedComponent;
+  let fixture: ComponentFixture<CardRoundedComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RoundedCardComponent]
-    })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(RoundedCardComponent);
+      imports: [CardRoundedComponent],
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(CardRoundedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

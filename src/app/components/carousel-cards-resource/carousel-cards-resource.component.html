@@ -1,25 +1,29 @@
-<div class="relative overflow-hidden ">
+<div class="relative overflow-hidden">
+  <h2 class="font-cormorant md:text-3xl text-xl text-slate-900 mb-2">
+    {{ title }}
+  </h2>
   <div
     class="flex gap-6 pb-8 overflow-x-auto scroll-smooth hide-scrollbar"
     (scroll)="onScroll($event)"
-    #scrollContainer
+    #scrollContainerResource
   >
     @for(card of cards; track $index) {
-    <app-card
-      [imgSrc]="card.imgSrc"
+    <app-card-resource
       [title]="card.title"
       [description]="card.description"
-      [iconName]="card.iconName"
       [link]="card.link"
-    ></app-card>
+      id="resource-{{ $index }}"
+    />
     }
   </div>
   @if(hasScroll){
-  <div class="absolute z-50 bottom-0 left-0 h-3 bg-gray-200 rounded-full w-full bg-gray-light">
+  <div
+    class="absolute z-50 bottom-0 left-0 h-3 bg-gray-200 rounded-full w-full bg-gray-light"
+  >
     <div
       class="bg-beige h-full rounded-full"
       [style]="{ width: scrollProgress + '%' }"
     ></div>
   </div>
-}
+  }
 </div>

@@ -1,0 +1,26 @@
+<app-title-page title="RECURSOS"></app-title-page>
+<app-card-cover
+  title="Explora nuestras recomendaciones  seleccionadas para inspirar tu conocimiento y crecimiento personal."
+></app-card-cover>
+<section class="m-4">
+    <app-carousel-cards-resource
+      [cards]="booksList"
+      title="Libros"
+      id="resources-books"
+    ></app-carousel-cards-resource>
+  </section>
+<section class="m-4 my-8">
+  <app-carousel-cards-resource
+    [cards]="podcatsList"
+    title="Podcasts"
+    id="resources-podcasts"
+  ></app-carousel-cards-resource>
+</section>
+<section class="m-4 my-8">
+  <app-carousel-cards-resource
+    [cards]="moviesList"
+    title="Series y películas"
+    id="resources-movies"
+  ></app-carousel-cards-resource>
+</section>
+

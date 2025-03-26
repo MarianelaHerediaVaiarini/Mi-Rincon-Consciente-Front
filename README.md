@@ -1,28 +1,18 @@
-# MiRinconConscienteFrontend
+# Mi Rincón Consciente - Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.9.
+Bienvenido al repositorio del frontend de **Mi Rincón Consciente**, una plataforma holística diseñada para inspirar el bienestar integral a través de contenido sobre cuerpo, mente y alma.
 
-## Development server
+Este proyecto está desarrollado con **Angular** y sigue las mejores prácticas en arquitectura y optimización para brindar una experiencia fluida y responsiva.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tecnologías utilizadas
+- **Angular 17.3.9**: Framework principal para el frontend.
+- **TypeScript**: Lenguaje de programación tipado para un código más seguro y mantenible.
+- **SCSS**: Preprocesador CSS para mejorar la modularidad y reutilización de estilos.
+- **Tailwind**: Framework de estilos utilitario para un diseño moderno y eficiente.
 
-## Code scaffolding
+## Contacto
+Si tienes alguna pregunta o sugerencia, no dudes en contactarme a través de [LinkedIn](https://www.linkedin.com/in/marianela-heredia-vaiarini-3244a3334/) o en el repositorio de GitHub.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
+Desarrollado con ❤️ por Marianela
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# Mi-Rincon-Consciente-Front

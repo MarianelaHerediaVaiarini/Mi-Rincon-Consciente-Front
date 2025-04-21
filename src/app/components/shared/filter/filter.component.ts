@@ -11,6 +11,7 @@ import { FilterInterface } from '../../../interfaces/filter.interface';
 export class FilterComponent {
   @Input() filters: FilterInterface[] = [];
   @Input() selectedFilters: string[] = []; 
+  
 
   @Output() filterChange = new EventEmitter<string[]>();
 

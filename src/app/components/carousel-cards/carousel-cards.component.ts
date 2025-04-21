@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { CardInterface } from '../../interfaces/card.interfaces';
 import { CardComponent } from '../shared/card/card.component';
 
@@ -9,64 +9,7 @@ import { CardComponent } from '../shared/card/card.component';
   templateUrl: './carousel-cards.component.html',
 })
 export class CarouselCardsComponent {
-  protected cards: CardInterface[] = [
-    {
-      title: 'Card 1',
-      link: 'https://www.google.com',
-      iconName: 'home',
-      imgSrc: 'https://via.placeholder.com/150',
-      description: 'This is a description for card 1',
-    },
-    {
-      title: 'Card 1',
-      link: 'https://www.google.com',
-      iconName: 'home',
-      imgSrc: 'https://via.placeholder.com/150',
-      description: 'This is a description for card 1',
-    },
-    {
-      title: 'Card 1',
-      link: 'https://www.google.com',
-      iconName: 'home',
-      imgSrc: 'https://via.placeholder.com/150',
-      description: 'This is a description for card 1',
-    },
-    {
-      title: 'Card 1',
-      link: 'https://www.google.com',
-      iconName: 'home',
-      imgSrc: 'https://via.placeholder.com/150',
-      description: 'This is a description for card 1',
-    },
-    {
-      title: 'Card 1',
-      link: 'https://www.google.com',
-      iconName: 'home',
-      imgSrc: 'https://via.placeholder.com/150',
-      description: 'This is a description for card 1',
-    },
-    {
-      title: 'Card 1',
-      link: 'https://www.google.com',
-      iconName: 'home',
-      imgSrc: 'https://via.placeholder.com/150',
-      description: 'This is a description for card 1',
-    },
-    {
-      title: 'Card 1',
-      link: 'https://www.google.com',
-      iconName: 'home',
-      imgSrc: 'https://via.placeholder.com/150',
-      description: 'This is a description for card 1',
-    },
-    {
-      title: 'Card 1',
-      link: 'https://www.google.com',
-      iconName: 'home',
-      imgSrc: 'https://via.placeholder.com/150',
-      description: 'This is a description for card 1',
-    },
-  ];
+  @Input() dataLoad: CardInterface[] = [];
   @ViewChild('scrollContainer', { static: true }) scrollContainer!: ElementRef;
   scrollProgress = 0;
   hasScroll = false;

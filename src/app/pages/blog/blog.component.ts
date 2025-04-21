@@ -5,6 +5,8 @@ import { FilterInterface } from '../../interfaces/filter.interface';
 import { CardComponent } from '../../components/shared/card/card.component';
 import { CardCoverComponent } from '../../components/shared/card-cover/card-cover.component';
 import { CardInterface } from '../../interfaces/card.interfaces';
+import { BlogService } from '../../services/blog/blog.service';
+import { BlogInterface } from '../../interfaces/blog.interface';
 
 @Component({
   selector: 'app-blog',
@@ -100,6 +102,29 @@ export class BlogComponent {
       description: 'This is a description for card 1',
     },
   ];
+  constructor(readonly blogService: BlogService) {}
+  ngOnInit() {
+    this.getAllDataBlog();
+  }
+
+  getAllDataBlog() {
+    this.blogService.getAllData().subscribe({
+      next: (data: BlogInterface[]) => {
+        this.cards = data.map((blog) => {
+          return {
+            title: blog.title,
+            link: `/blog/${blog.id}`,
+            iconName: 'home',
+            imgSrc: blog.cover_image_url,
+            description: blog.summary,
+          };
+        });
+      },
+      error: (error) => {
+        console.error(error);
+      },
+    });
+  }
   filterChange(selectedFilters: string[]): void {
     this.selectedFilters = selectedFilters;
   }

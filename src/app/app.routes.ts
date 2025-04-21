@@ -19,6 +19,10 @@ export const routes: Routes = [
     component: BlogComponent,
   },
   {
+    path: 'blog/:id',
+    component: BlogDetailComponent,
+  },
+  {
     path: 'resources',
     component: ResourcesComponent,
   },

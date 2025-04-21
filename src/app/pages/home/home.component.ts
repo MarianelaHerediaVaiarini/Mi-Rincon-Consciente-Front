@@ -33,7 +33,7 @@ export class HomeComponent {
             link: `/blog/${item.id}`,
             iconName: 'home',
             imgSrc: item.cover_image_url,
-            description: item.subtitle,
+            description: item.summary,
           };
         });
       },

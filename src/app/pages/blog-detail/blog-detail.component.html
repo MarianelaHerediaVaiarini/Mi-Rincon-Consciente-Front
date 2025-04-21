@@ -1,1 +1,40 @@
-<p>blog-detail works!</p>
+<section class="relative bg-white text-brown-900 overflow-hidden">
+  <div class="absolute top-0 left-0 w-full h-1/4 bg-beige z-0"></div>
+
+  <div class="relative z-10 flex flex-col-reverse lg:flex-row lg:items-start">
+    <div
+      class="w-full lg:w-1/2 px-6 lg:pt-[23vh] text-center flex flex-col justify-center items-center"
+    >
+      <h1 class="text-2xl md:text-3xl lg:text-6xl font-cormorant font-normal">
+        {{ blog.title }}
+      </h1>
+    </div>
+
+    <div
+      class="w-full lg:w-1/2 flex justify-center items-center px-6 lg:py-3 py-10"
+    >
+      <img
+        [src]="blog.cover_image_url"
+        [alt]="'cover-blog' + blog.title"
+        class="w-full max-w-xl object-cover rounded-md shadow-md"
+      />
+    </div>
+  </div>
+  <div
+    class="my-4 flex justify-center lg:hidden items-center gap-2 text-brown-500"
+  >
+    <span class="h-[1px] w-12 lg:w-20 bg-brown-dark"></span>
+    <span class="text-sm font-light">✦</span>
+    <span class="h-[1px] w-12 lg:w-20 bg-brown-dark"></span>
+  </div>
+
+  @if(blog.content){
+  <div class="text-left px-4 lg:px-10 text-brown-800">
+    @for(paragraph of blog.content.split('\n'); track $index) {
+    <p class="text-sm md:text-base">
+      {{ paragraph }}
+    </p>
+    }
+  </div>
+  }
+</section>

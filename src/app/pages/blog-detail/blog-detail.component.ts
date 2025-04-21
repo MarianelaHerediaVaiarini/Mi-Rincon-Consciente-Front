@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { BlogService } from '../../services/blog/blog.service';
+import { BlogInterface } from '../../interfaces/blog.interface';
 
 @Component({
   selector: 'app-blog-detail',
@@ -8,21 +10,29 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './blog-detail.component.html',
 })
 export class BlogDetailComponent {
-  blog: any;
+  blog: BlogInterface = {} as BlogInterface;
 
-  constructor(readonly route: ActivatedRoute) {}
+  constructor(
+    readonly route: ActivatedRoute,
+    readonly blogService: BlogService
+  ) {}
 
   ngOnInit(): void {
-    // Obtener el parámetro dinámico de la URL
-    const slug = this.route.snapshot.paramMap.get('slug');
-    if (slug) {
-      this.getBlogDetails(slug);
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.getBlogDetails(id);
     }
   }
 
-  getBlogDetails(slug: string): void {
-    // this.blogService.getBlogBySlug(slug).subscribe((data) => {
-    //   this.blog = data;
-    // });
+  getBlogDetails(id: string): void {
+    this.blogService.getById(id).subscribe({
+      next: (data: BlogInterface) => {
+        this.blog = data;
+        console.log('Blog details:', this.blog);
+      },
+      error: (error) => {
+        console.error('Error fetching blog details', error);
+      },
+    });
   }
 }

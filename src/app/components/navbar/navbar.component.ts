@@ -17,6 +17,7 @@ export class NavbarComponent {
   constructor(readonly router: Router, readonly searchService: SearchService) {
     this.router.events.subscribe(() => {
       this.showSearch = this.router.url !== '/';
+      this.menuOpen = false; 
     });
   }
 

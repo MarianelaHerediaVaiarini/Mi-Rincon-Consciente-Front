@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IconComponent } from '../shared/icon/icon.component';
-import { RouterLink, RouterLinkActive } from '@angular/router';
-import { Router } from '@angular/router';
+import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { SearchService } from '../../services/search/search.service';
 @Component({
   selector: 'app-navbar',

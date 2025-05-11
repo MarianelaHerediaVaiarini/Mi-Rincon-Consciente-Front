@@ -2,14 +2,13 @@ import { Component } from '@angular/core';
 import { TherapyInterface } from '../../interfaces/therapies.interface';
 import { ActivatedRoute } from '@angular/router';
 import { TherapiesService } from '../../services/therapies/therapies.service';
-import { IconComponent } from '../../components/shared/icon/icon.component';
 import { CardRoundedComponent } from '../../components/shared/card-rounded/card-rounded.component';
 
 
 @Component({
   selector: 'app-therapy-detail',
   standalone: true,
-  imports: [IconComponent, CardRoundedComponent],
+  imports: [CardRoundedComponent],
   templateUrl: './therapy-detail.component.html',
 })
 export class TherapyDetailComponent {
@@ -33,7 +32,6 @@ export class TherapyDetailComponent {
     this.therapiesService.getById(id).subscribe({
       next: (data: TherapyInterface) => {
         this.therapy = data;
-        console.log('Therapy details:', this.therapy);
         this.loading = false;
       },
       error: (error) => {

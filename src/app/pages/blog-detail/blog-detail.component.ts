@@ -28,7 +28,6 @@ export class BlogDetailComponent {
     this.blogService.getById(id).subscribe({
       next: (data: BlogInterface) => {
         this.blog = data;
-        console.log('Blog details:', this.blog);
       },
       error: (error) => {
         console.error('Error fetching blog details', error);

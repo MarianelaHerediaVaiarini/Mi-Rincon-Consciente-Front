@@ -1,0 +1,74 @@
+@if(loading){
+<div></div>
+}@else {
+<section class="relative bg-white text-brown-900 overflow-hidden">
+  <div class="absolute top-0 left-0 w-full h-1/4 bg-beige z-0"></div>
+
+  <div class="relative z-10 flex flex-col-reverse lg:flex-row lg:items-start">
+    <div
+      class="w-full lg:w-1/2 px-6 lg:pt-[23vh] text-center flex flex-col justify-center items-center"
+    >
+      <h1
+        class="text-2xl mb-2 md:text-3xl lg:text-6xl font-cormorant font-normal"
+      >
+        {{ therapy.name }}
+      </h1>
+      <p>
+        {{ therapy.phrase }}
+      </p>
+    </div>
+
+    <div
+      class="w-full lg:w-1/2 flex justify-center items-center px-6 lg:py-3 py-10"
+    >
+      <img
+        [src]="therapy.cover_image"
+        [alt]="'cover-therapy' + therapy.name"
+        class="w-full max-w-xl object-cover rounded-md shadow-md"
+      />
+    </div>
+  </div>
+  <div class="lg:hidden flex justify-center items-center py-3">
+    <img
+      src="assets/images/logo/starSeparator.png"
+      alt="star-separator"
+      class="max-w-80 w-1/2"
+    />
+  </div>
+
+  @if(therapy.description){
+  <div class="text-left px-4 lg:px-10 text-brown-800">
+    @for(paragraph of therapy.description.split('\n'); track $index) {
+    <p class="text-sm md:text-base">
+      {{ paragraph }}
+    </p>
+    }
+  </div>
+  }
+  <div
+    class="flex justify-center items-center font-cormorant text-center gap-6 my-12"
+  >
+    <app-card-rounded
+      [title]="therapy.duration + ' min.'"
+      bgColor="brown-dark"
+      [iconName]="'clock'"
+      [iconColor]="'white'"
+      [small]="true"
+    ></app-card-rounded>
+    <app-card-rounded
+      [title]="therapy.modality == 1 ? 'Individual' : 'Grupal'"
+      bgColor="beige"
+      iconName="basic-person"
+      [iconColor]="'white'"
+      [small]="true"
+    ></app-card-rounded>
+    <app-card-rounded
+      [title]="therapy.type == 1 ? 'Presencial' : 'Online'"
+      bgColor="brown-light"
+      iconName="online"
+      [iconColor]="'white'"
+      [small]="true"
+    ></app-card-rounded>
+  </div>
+</section>
+}

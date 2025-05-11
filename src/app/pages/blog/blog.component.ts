@@ -44,64 +44,7 @@ export class BlogComponent {
     { id: 'lifestyle', label: 'Estilo de vida', icon: 'tree', hovered: false },
   ];
   protected selectedFilters: string[] = ['all'];
-  protected cards: CardInterface[] = [
-    {
-      title: 'Card 1',
-      link: 'https://www.google.com',
-      iconName: 'home',
-      imgSrc: 'https://via.placeholder.com/150',
-      description: 'This is a description for card 1',
-    },
-    {
-      title: 'Card 1',
-      link: 'https://www.google.com',
-      iconName: 'home',
-      imgSrc: 'https://via.placeholder.com/150',
-      description: 'This is a description for card 1',
-    },
-    {
-      title: 'Card 1',
-      link: 'https://www.google.com',
-      iconName: 'home',
-      imgSrc: 'https://via.placeholder.com/150',
-      description: 'This is a description for card 1',
-    },
-    {
-      title: 'Card 1',
-      link: 'https://www.google.com',
-      iconName: 'home',
-      imgSrc: 'https://via.placeholder.com/150',
-      description: 'This is a description for card 1',
-    },
-    {
-      title: 'Card 1',
-      link: 'https://www.google.com',
-      iconName: 'home',
-      imgSrc: 'https://via.placeholder.com/150',
-      description: 'This is a description for card 1',
-    },
-    {
-      title: 'Card 1',
-      link: 'https://www.google.com',
-      iconName: 'home',
-      imgSrc: 'https://via.placeholder.com/150',
-      description: 'This is a description for card 1',
-    },
-    {
-      title: 'Card 1',
-      link: 'https://www.google.com',
-      iconName: 'home',
-      imgSrc: 'https://via.placeholder.com/150',
-      description: 'This is a description for card 1',
-    },
-    {
-      title: 'Card 1',
-      link: 'https://www.google.com',
-      iconName: 'home',
-      imgSrc: 'https://via.placeholder.com/150',
-      description: 'This is a description for card 1',
-    },
-  ];
+  protected cards: CardInterface[] = [];
   constructor(readonly blogService: BlogService) {}
   ngOnInit() {
     this.getAllDataBlog();

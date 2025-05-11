@@ -1,14 +1,14 @@
 <a [routerLink]="link" class="cursor-pointer">
-  <div>
-    <div [style.background-color]="'var(--' + bgColor + ')'" class="p-3 rounded-full h-min w-min">
+  <div class="text-center">
+    <div [style.background-color]="'var(--' + bgColor + ')'" class="p-3 rounded-full h-min w-min mx-auto">
       <app-icon [iconName]="iconName" size="50px" [color]="iconColor"></app-icon>
     </div>
     @if(!small){
-      <h3 class="text-center subtitle">
+      <h3 class=" subtitle">
         {{ title }}
       </h3>
     } @else {
-      <h4 class="text-center subtitle !text-sm">
+      <h4 class="subtitle !text-sm">
         {{ title }}
       </h4>
     }

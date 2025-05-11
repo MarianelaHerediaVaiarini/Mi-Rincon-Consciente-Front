@@ -20,29 +20,7 @@ import { BlogInterface } from '../../interfaces/blog.interface';
   templateUrl: './blog.component.html',
 })
 export class BlogComponent {
-  protected filters: FilterInterface[] = [
-    { id: 'all', label: 'Todos', hovered: false },
-    { id: 'nutrition', label: 'Alimentación', icon: 'food', hovered: false },
-    {
-      id: 'self-love',
-      label: 'Amor propio',
-      icon: 'love-yourself',
-      hovered: false,
-    },
-    {
-      id: 'spirituality',
-      label: 'Espiritualidad',
-      icon: 'basic-meditation',
-      hovered: false,
-    },
-    {
-      id: 'physical-wellbeing',
-      label: 'Bienestar físico',
-      icon: 'basic-yoga',
-      hovered: false,
-    },
-    { id: 'lifestyle', label: 'Estilo de vida', icon: 'tree', hovered: false },
-  ];
+  protected filters: FilterInterface[] = [];
   protected selectedFilters: string[] = ['all'];
   protected cards: CardInterface[] = [];
   constructor(readonly blogService: BlogService) {}

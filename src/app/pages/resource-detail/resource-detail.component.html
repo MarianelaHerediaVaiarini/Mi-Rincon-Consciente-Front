@@ -1,0 +1,50 @@
+<section class="relative bg-white text-brown-900 overflow-hidden">
+  <div class="absolute top-0 left-0 w-full h-1/4 bg-beige z-0"></div>
+
+  <div class="relative z-10 flex flex-col-reverse lg:flex-row lg:items-start">
+    <div
+      class="w-full lg:w-1/2 px-6 lg:pt-[23vh] text-center flex flex-col justify-center items-center"
+    >
+      <h1 class="text-2xl md:text-3xl lg:text-6xl font-cormorant font-normal">
+        {{ resource.title }}
+      </h1>
+    </div>
+
+    <div
+      class="w-full lg:w-1/2 flex justify-center items-center px-6 lg:py-3 py-10"
+    >
+      <img
+        [src]="resource.cover_image"
+        [alt]="'cover-resource' + resource.title"
+        class="w-full max-w-xl object-cover rounded-md shadow-md"
+      />
+    </div>
+  </div>
+  <div class="lg:hidden flex justify-center items-center py-3">
+    <img
+      src="assets/images/logo/starSeparator.png"
+      alt="star-separator"
+      class="max-w-80 w-1/2"
+    />
+  </div>
+
+  @if(resource.description){
+  <div class="text-left px-4 lg:px-10 text-brown-800">
+    @for(paragraph of resource.description.split('\n'); track $index) {
+    <p class="text-sm md:text-base">
+      {{ paragraph }}
+    </p>
+    }
+  </div>
+  } @if(resource.phrase){
+  <div class="flex justify-center">
+    <div
+      class="text-center bg-primary bg-cover bg-center p-6 m-10 rounded-lg px-4 lg:px-10 w-auto"
+    >
+      <p class="text-lg md:text-xl font-cormorant text-white">
+        {{ resource.phrase }}
+      </p>
+    </div>
+  </div>
+  }
+</section>

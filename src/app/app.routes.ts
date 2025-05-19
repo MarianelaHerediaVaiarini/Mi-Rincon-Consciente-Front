@@ -5,6 +5,7 @@ import { TherapiesComponent } from './pages/therapies/therapies.component';
 import { ResourcesComponent } from './pages/resources/resources.component';
 import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
 import { TherapyDetailComponent } from './pages/therapy-detail/therapy-detail.component';
+import { ResourceDetailComponent } from './pages/resource-detail/resource-detail.component';
 
 export const routes: Routes = [
   {
@@ -30,6 +31,10 @@ export const routes: Routes = [
   {
     path: 'resources',
     component: ResourcesComponent,
+  },
+  {
+    path: 'resources/:id',
+    component: ResourceDetailComponent,
   },
   { path: ':slug', component: BlogDetailComponent }, 
 ];

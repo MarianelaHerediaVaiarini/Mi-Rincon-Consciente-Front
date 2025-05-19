@@ -1,31 +1,24 @@
 import { Injectable } from '@angular/core';
+import { environment } from '../../../environments/environment';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { SearchResultInterface } from '../../interfaces/search.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SearchService {
-  private therapies = ['Yoga', 'Reiki', 'Meditación', 'Masajes'];
-  private blog = ['Cómo meditar', 'Alimentación consciente', 'Amor propio'];
-  private resources = ['Libros de mindfulness', 'Podcasts de bienestar'];
+  readonly apiUrl = environment.apiUrl;
 
-  searchInCategory(category: string, query: string): string[] {
-    if (!query) return [];
-    const data = this.getDataByCategory(category);
-    return data.filter((item) =>
-      item.toLowerCase().includes(query.toLowerCase())
-    );
-  }
+  constructor(private readonly http: HttpClient) {}
 
-  private getDataByCategory(category: string): string[] {
-    switch (category) {
-      case '/therapies':
-        return this.therapies;
-      case '/blog':
-        return this.blog;
-      case '/resources':
-        return this.resources;
-      default:
-        return [];
+  search(category: string, query: string): Observable<SearchResultInterface[]> {
+    if (!query) {
+      return new Observable<SearchResultInterface[]>(subscriber => {
+        subscriber.next([]);
+        subscriber.complete();
+      });
     }
+    return this.http.get<SearchResultInterface[]>(`${this.apiUrl}/search/${category}?q=${query}`);
   }
 }

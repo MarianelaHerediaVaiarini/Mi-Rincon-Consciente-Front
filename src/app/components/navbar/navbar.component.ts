@@ -41,7 +41,6 @@ export class NavbarComponent {
   }
 
   onResultClick(result: SearchResultInterface): void {
-    console.log('Resultado seleccionado:', result);
     switch (this.type) {
       case 'therapies':
         this.router.navigate(['/therapies', result.id]);

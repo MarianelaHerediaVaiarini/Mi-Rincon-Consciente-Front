@@ -16,7 +16,7 @@
       <img
         [src]="resource.cover_image"
         [alt]="'cover-resource' + resource.title"
-        class="w-full max-w-xl object-cover rounded-md shadow-md"
+        class="w-full max-w-xl max-h-[40vh] object-cover rounded-md shadow-md"
       />
     </div>
   </div>
@@ -29,7 +29,7 @@
   </div>
 
   @if(resource.description){
-  <div class="text-left px-4 lg:px-10 text-brown-800">
+  <div class="text-left px-4 lg:px-10 text-brown-800 po-pt-4">
     @for(paragraph of resource.description.split('\n'); track $index) {
     <p class="text-sm md:text-base">
       {{ paragraph }}

@@ -16,7 +16,7 @@
       <img
         [src]="blog.cover_image_url"
         [alt]="'cover-blog' + blog.title"
-        class="w-full max-w-xl object-cover rounded-md shadow-md"
+        class="w-full max-w-xl max-h-[40vh] object-cover rounded-md shadow-md"
       />
     </div>
   </div>
@@ -31,7 +31,7 @@
   </div>
 
   @if(blog.content){
-  <div class="text-left px-4 lg:px-10 text-brown-800">
+  <div class="text-left px-4 lg:px-10 text-brown-800 po-pt-4">
     @for(paragraph of blog.content.split('\n'); track $index) {
     <p class="text-sm md:text-base">
       {{ paragraph }}

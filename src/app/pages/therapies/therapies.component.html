@@ -13,8 +13,10 @@
     class="max-w-80 w-1/2"
   />
 </div>
+@if(loading){ 
+<app-skeleton-list></app-skeleton-list>
+} @else { @for(therapy of therapies; track $index){
 <div class="flex justify-evenly w-full gap-4 flex-wrap p-8">
-  @if(loading){ } @else { @for(therapy of therapies; track $index){
   <app-card-rounded
     [bgColor]="therapy.bgColor"
     [iconName]="therapy.iconName"
@@ -24,5 +26,6 @@
     [id]="$index"
     [small]="true"
   />
-  } }
 </div>
+} 
+}

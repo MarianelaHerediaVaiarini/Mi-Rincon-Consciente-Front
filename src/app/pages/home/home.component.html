@@ -39,6 +39,11 @@
   }
 </div>
 </div>
-<div class="m-4">
-  <app-carousel-cards [dataLoad]="blogData"/>
-</div>
+@if(loading){
+  <app-skeleton-list></app-skeleton-list>
+} @else {
+  
+  <div class="m-4">
+    <app-carousel-cards [dataLoad]="blogData"/>
+  </div>
+}

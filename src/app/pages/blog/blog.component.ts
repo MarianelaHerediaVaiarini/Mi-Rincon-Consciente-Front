@@ -7,6 +7,7 @@ import { CardCoverComponent } from '../../components/shared/card-cover/card-cove
 import { CardInterface } from '../../interfaces/card.interfaces';
 import { BlogService } from '../../services/blog/blog.service';
 import { BlogInterface } from '../../interfaces/blog.interface';
+import { SkeletonListComponent } from '../../components/skeletons/skeleton-list/skeleton-list.component';
 
 @Component({
   selector: 'app-blog',
@@ -16,6 +17,7 @@ import { BlogInterface } from '../../interfaces/blog.interface';
     FilterComponent,
     CardComponent,
     CardCoverComponent,
+    SkeletonListComponent,
   ],
   templateUrl: './blog.component.html',
 })
@@ -23,6 +25,7 @@ export class BlogComponent {
   protected filters: FilterInterface[] = [];
   protected selectedFilters: string[] = ['all'];
   protected cards: CardInterface[] = [];
+  protected loading: boolean = true;
   constructor(readonly blogService: BlogService) {}
   ngOnInit() {
     this.getAllDataBlog();
@@ -40,9 +43,13 @@ export class BlogComponent {
             description: blog.summary,
           };
         });
+        setTimeout(() => {
+          this.loading = false;
+        }, 1000);
       },
       error: (error) => {
         console.error(error);
+        this.loading = false;
       },
     });
   }

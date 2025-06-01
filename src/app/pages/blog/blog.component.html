@@ -9,14 +9,19 @@
     (filterChange)="filterChange($event)"
   ></app-filter>
 </div>
-<div class="flex flex-wrap gap-6 m-8 justify-center pb-8">
-  @for(card of cards; track $index){
-  <app-card
-    [imgSrc]="card.imgSrc"
-    [title]="card.title"
-    [description]="card.description"
-    [iconName]="card.iconName"
-    [link]="card.link"
-  ></app-card>
-  }
-</div>
+@if(loading){
+  <app-skeleton-list></app-skeleton-list>
+} @else {
+  <div class="flex flex-wrap gap-6 m-8 justify-center pb-8">
+    @for(card of cards; track $index){
+    <app-card
+      [imgSrc]="card.imgSrc"
+      [title]="card.title"
+      [description]="card.description"
+      [iconName]="card.iconName"
+      [link]="card.link"
+    ></app-card>
+    }
+  </div>
+}
+

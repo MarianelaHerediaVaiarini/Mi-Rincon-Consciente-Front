@@ -6,18 +6,23 @@ import { CarouselCardsComponent } from '../../components/carousel-cards/carousel
 import { BlogInterface } from '../../interfaces/blog.interface';
 import { BlogService } from '../../services/blog/blog.service';
 import { CardInterface } from '../../interfaces/card.interfaces';
+import { SkeletonListComponent } from '../../components/skeletons/skeleton-list/skeleton-list.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CardRoundedComponent, CarouselCardsComponent],
+  imports: [
+    CardRoundedComponent,
+    CarouselCardsComponent,
+    SkeletonListComponent,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
   protected subMenuList: SubMenuListInterface[] = subMenuListUtil;
   protected blogData: CardInterface[] = [];
-
+  protected loading: boolean = true;
   constructor(readonly blogService: BlogService) {}
 
   ngOnInit() {
@@ -36,9 +41,13 @@ export class HomeComponent {
             description: item.summary,
           };
         });
+        setTimeout(() => {
+          this.loading = false;
+        }, 1000);
       },
       error: (error) => {
         console.error('Error fetching blog data', error);
+        this.loading = false;
       },
     });
   }

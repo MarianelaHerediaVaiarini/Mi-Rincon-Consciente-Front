@@ -5,11 +5,17 @@ import { CardRoundedComponent } from '../../components/shared/card-rounded/card-
 import { SubMenuListInterface } from '../../interfaces/home.interfaces';
 import { TherapiesService } from '../../services/therapies/therapies.service';
 import { TherapyInterface } from '../../interfaces/therapies.interface';
+import { SkeletonListComponent } from '../../components/skeletons/skeleton-list/skeleton-list.component';
 
 @Component({
   selector: 'app-therapies',
   standalone: true,
-  imports: [TitlePageComponent, CardCoverComponent, CardRoundedComponent],
+  imports: [
+    TitlePageComponent,
+    CardCoverComponent,
+    CardRoundedComponent,
+    SkeletonListComponent,
+  ],
   templateUrl: './therapies.component.html',
 })
 export class TherapiesComponent {
@@ -22,7 +28,6 @@ export class TherapiesComponent {
   getAllTherapies() {
     this.therapiesService.getAllData().subscribe({
       next: (data: TherapyInterface[]) => {
-        this.loading = false;
         this.therapies = data.map((item: TherapyInterface, index) => {
           return {
             title: item.name,
@@ -34,6 +39,9 @@ export class TherapiesComponent {
             iconColor: 'white',
           };
         });
+        setTimeout(() => {
+          this.loading = false;
+        }, 1000);
       },
       error: (error) => {
         console.error('Error fetching therapies data', error);
